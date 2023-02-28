@@ -1,0 +1,57 @@
+.screen {
+  background-color: #212529;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.content {
+  position: relative;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.content.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card-face {
+  position: absolute;
+  border-radius: 2px;
+  backface-visibility: hidden;
+}
+
+.card-face-front {
+  background: url("./assets/luky.png") no-repeat center;
+  background-size: contain;
+  background-color: #7d7;
+  width: 100%;
+  height: 100%;
+}
+
+.card-face-back {
+  padding: 10px;
+  background: #e3e8f0;
+  transform: rotateY(180deg);
+  display: none;
+}
+
+.display-card-face-back {
+  display: block;
+}
+
+@media screen and (max-width: 343px) {
+  .card-face-front {
+    height: 75%;
+  }
+}
